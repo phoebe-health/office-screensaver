@@ -1,19 +1,33 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useLiveData, useAnimationFrame } from '../shared/useLiveData'
+import NumberFlow from '@number-flow/react'
+import { useLiveData } from '../shared/useLiveData'
 import type { TextsData } from '../shared/types'
-import { theme, FONT_STACK, MONO_STACK } from '../shared/theme'
 import { withCommas } from '../shared/format'
 import { Globe, type ArcSpec } from './Globe'
 import { LiveFeed } from './LiveFeed'
 import { useTextStream, type FeedRow } from './stream'
 import './texts.css'
 
-// ---- Big ticking counter (extrapolated between snapshots) --------------------
+const SANS = 'var(--font-sans)'
+const MONO = 'var(--font-mono)'
+
+// ---- Phoebe flower mark (the real brand asset) -------------------------------
+function FlowerMark() {
+  return (
+    <img
+      src="./flower-mark.svg"
+      width={38}
+      height={38}
+      alt=""
+      style={{ borderRadius: 10, flexShrink: 0, display: 'block' }}
+    />
+  )
+}
+
+// ---- Big ticking counter — NumberFlow, extrapolated between snapshots --------
 function TodayCounter({ data }: { data: TextsData }) {
-  const [display, setDisplay] = useState(data.totals.textsToday)
-  const anchor = useRef({ count: 0, t: 0, perSec: 0 })
-  const shown = useRef(0)
-  const primed = useRef(false)
+  const [value, setValue] = useState(data.totals.textsToday)
+  const anchor = useRef({ count: data.totals.textsToday, t: performance.now(), perSec: 0 })
 
   useEffect(() => {
     anchor.current = {
@@ -21,37 +35,32 @@ function TodayCounter({ data }: { data: TextsData }) {
       t: performance.now(),
       perSec: data.rate.textsPerMinute / 60,
     }
-    if (!primed.current) {
-      shown.current = data.totals.textsToday
-      primed.current = true
-    }
   }, [data])
 
-  useAnimationFrame(() => {
-    const a = anchor.current
-    if (!a.t) return
-    const target = a.count + ((performance.now() - a.t) / 1000) * a.perSec
-    // Ease toward the authoritative target so new snapshots never visibly reset.
-    shown.current += (target - shown.current) * 0.1
-    const next = Math.round(shown.current)
-    setDisplay((prev) => (prev === next ? prev : next))
-  })
+  // Push a rounded, extrapolated value on a ~120ms throttle; NumberFlow animates
+  // the digit transitions smoothly (no 60fps churn needed).
+  useEffect(() => {
+    const id = setInterval(() => {
+      const a = anchor.current
+      const next = Math.round(a.count + ((performance.now() - a.t) / 1000) * a.perSec)
+      setValue((prev) => (prev === next ? prev : next))
+    }, 120)
+    return () => clearInterval(id)
+  }, [])
 
   return (
-    <div
+    <NumberFlow
+      value={value}
+      className="lt-counter"
       style={{
-        fontFamily: MONO_STACK,
-        fontSize: 'clamp(46px, 6.4vw, 132px)',
-        fontWeight: 500,
-        lineHeight: 0.98,
-        color: theme.text,
-        letterSpacing: '-0.02em',
-        fontVariantNumeric: 'tabular-nums',
-        textShadow: `0 0 40px ${theme.cyan}55`,
+        fontFamily: MONO,
+        fontSize: 'clamp(52px, 7vw, 148px)',
+        fontWeight: 600,
+        lineHeight: 0.95,
+        color: 'var(--ink-900)',
+        letterSpacing: '-0.03em',
       }}
-    >
-      {withCommas(display)}
-    </div>
+    />
   )
 }
 
@@ -60,53 +69,72 @@ function SplitBar({ sms, imsg }: { sms: number; imsg: number }) {
   const total = Math.max(1, sms + imsg)
   const smsPct = Math.round((sms / total) * 100)
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 6, minWidth: 0, flex: 1 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0, flex: 1 }}>
       <div
         style={{
           display: 'flex',
-          height: 'clamp(6px, 0.7vh, 10px)',
+          height: 'clamp(8px, 0.8vh, 12px)',
           borderRadius: 999,
           overflow: 'hidden',
-          background: theme.border,
+          background: 'var(--ink-100)',
         }}
       >
-        <div style={{ width: `${smsPct}%`, background: theme.cyan }} />
-        <div style={{ flex: 1, background: theme.green }} />
+        <div style={{ width: `${smsPct}%`, background: 'var(--sky)' }} />
+        <div style={{ flex: 1, background: 'var(--meadow-700)' }} />
       </div>
       <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          fontFamily: MONO_STACK,
-          fontSize: 'clamp(10px, 0.66vw, 14px)',
-          color: theme.textDim,
+          fontFamily: MONO,
+          fontSize: 'clamp(12px, 0.78vw, 16px)',
+          fontWeight: 500,
         }}
       >
-        <span style={{ color: theme.cyan }}>SMS {smsPct}%</span>
-        <span style={{ color: theme.green }}>iMessage {100 - smsPct}%</span>
+        <span style={{ color: 'var(--sky)' }}>SMS {smsPct}%</span>
+        <span style={{ color: 'var(--meadow-700)' }}>iMessage {100 - smsPct}%</span>
       </div>
     </div>
   )
 }
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        fontFamily: SANS,
+        fontWeight: 700,
+        fontSize: 'clamp(12px, 0.82vw, 18px)',
+        letterSpacing: '0.28em',
+        textTransform: 'uppercase',
+        color: 'var(--ink-400)',
+      }}
+    >
+      {children}
+    </div>
+  )
+}
+
+const PAGE_BG = 'linear-gradient(180deg, #FFFFFF 0%, #FBF6EF 100%)'
 
 function Loading() {
   return (
     <div
       className="lt-root"
       style={{
-        background: theme.bg,
-        color: theme.textDim,
+        background: PAGE_BG,
+        color: 'var(--ink-400)',
         display: 'grid',
         placeItems: 'center',
-        fontFamily: MONO_STACK,
-        fontSize: 'clamp(14px, 1.4vw, 24px)',
-        letterSpacing: '0.1em',
+        fontFamily: MONO,
+        fontSize: 'clamp(15px, 1.3vw, 24px)',
+        letterSpacing: '0.06em',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
         <span
           className="lt-livedot"
-          style={{ width: 12, height: 12, borderRadius: '50%', background: theme.cyan }}
+          style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--iris-500)' }}
         />
         connecting to the live feed…
       </div>
@@ -144,37 +172,29 @@ export function TextsGlobe() {
     <div
       className="lt-root"
       style={{
-        background: `radial-gradient(1200px 800px at 28% 42%, #0a1420 0%, ${theme.bg} 60%)`,
-        color: theme.text,
-        fontFamily: FONT_STACK,
+        background: PAGE_BG,
+        color: 'var(--ink-900)',
+        fontFamily: SANS,
         display: 'flex',
         flexDirection: 'column',
-        padding: 'clamp(16px, 2.2vh, 40px) clamp(20px, 2.4vw, 56px)',
-        gap: 'clamp(10px, 1.6vh, 26px)',
+        padding: 'clamp(20px, 2.6vh, 44px) clamp(24px, 2.8vw, 60px)',
+        gap: 'clamp(12px, 1.8vh, 28px)',
       }}
     >
       {/* Header */}
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 'clamp(12px, 1.2vw, 26px)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(10px, 0.9vw, 16px)' }}>
+          <FlowerMark />
           <span
             style={{
-              fontWeight: 800,
-              fontSize: 'clamp(20px, 1.7vw, 34px)',
-              letterSpacing: '-0.02em',
-              color: theme.text,
+              fontFamily: SANS,
+              fontWeight: 700,
+              fontSize: 'clamp(22px, 1.8vw, 36px)',
+              letterSpacing: '-0.01em',
+              color: 'var(--ink-900)',
             }}
           >
             phoebe
-          </span>
-          <span
-            style={{
-              fontWeight: 700,
-              fontSize: 'clamp(15px, 1.25vw, 26px)',
-              letterSpacing: '0.34em',
-              color: theme.cyan,
-            }}
-          >
-            LIVE TEXTS
           </span>
         </div>
         <div
@@ -182,20 +202,20 @@ export function TextsGlobe() {
             display: 'flex',
             alignItems: 'center',
             gap: 10,
-            fontFamily: MONO_STACK,
-            fontSize: 'clamp(11px, 0.85vw, 18px)',
-            letterSpacing: '0.14em',
-            color: theme.textDim,
+            fontFamily: SANS,
+            fontWeight: 700,
+            fontSize: 'clamp(13px, 0.95vw, 20px)',
+            letterSpacing: '0.28em',
+            color: 'var(--ink-400)',
           }}
         >
           <span
             className="lt-livedot"
             style={{
-              width: 'clamp(8px, 0.6vw, 12px)',
-              height: 'clamp(8px, 0.6vw, 12px)',
+              width: 'clamp(9px, 0.62vw, 12px)',
+              height: 'clamp(9px, 0.62vw, 12px)',
               borderRadius: '50%',
-              background: theme.red,
-              boxShadow: `0 0 12px ${theme.red}`,
+              background: 'var(--iris-500)',
             }}
           />
           LIVE
@@ -208,45 +228,44 @@ export function TextsGlobe() {
           flex: 1,
           minHeight: 0,
           display: 'flex',
-          gap: 'clamp(16px, 2vw, 44px)',
+          gap: 'clamp(20px, 2.4vw, 52px)',
           alignItems: 'stretch',
         }}
       >
-        {/* Left — globe */}
-        <div style={{ flex: '1.32 1 0', minWidth: 0, position: 'relative' }}>
-          <div className="lt-stars" />
+        {/* Left — dotted globe */}
+        <div style={{ flex: '1.3 1 0', minWidth: 0, position: 'relative' }}>
           <Globe locations={locations} arcs={arcs} />
         </div>
 
         {/* Right — counters + feed */}
-        <div style={{ flex: '1 1 0', minWidth: 0, display: 'flex', flexDirection: 'column', gap: 'clamp(12px, 1.6vh, 26px)' }}>
+        <div
+          style={{
+            flex: '1 1 0',
+            minWidth: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'clamp(14px, 1.9vh, 30px)',
+          }}
+        >
           <div>
-            <div
-              style={{
-                fontFamily: MONO_STACK,
-                fontSize: 'clamp(11px, 0.8vw, 17px)',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color: theme.textDim,
-                marginBottom: 4,
-              }}
-            >
-              Texts sent today
+            <Eyebrow>Texts sent today</Eyebrow>
+            <div style={{ marginTop: 'clamp(6px, 0.9vh, 14px)' }}>
+              <TodayCounter data={data} />
             </div>
-            <TodayCounter data={data} />
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 'clamp(14px, 1.4vw, 28px)',
-                marginTop: 'clamp(10px, 1.2vh, 18px)',
+                gap: 'clamp(16px, 1.6vw, 32px)',
+                marginTop: 'clamp(12px, 1.4vh, 22px)',
               }}
             >
               <span
                 style={{
-                  fontFamily: MONO_STACK,
-                  fontSize: 'clamp(14px, 1.15vw, 24px)',
-                  color: theme.cyan,
+                  fontFamily: MONO,
+                  fontWeight: 500,
+                  fontSize: 'clamp(16px, 1.2vw, 26px)',
+                  color: 'var(--iris-500)',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -265,10 +284,10 @@ export function TextsGlobe() {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          fontFamily: MONO_STACK,
-          fontSize: 'clamp(10px, 0.72vw, 15px)',
-          letterSpacing: '0.08em',
-          color: theme.textFaint,
+          fontFamily: MONO,
+          fontSize: 'clamp(12px, 0.76vw, 16px)',
+          letterSpacing: '0.02em',
+          color: 'var(--ink-400)',
         }}
       >
         <span>for fun · approximate · no PII</span>

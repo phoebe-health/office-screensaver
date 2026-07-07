@@ -11,7 +11,7 @@ interface Order {
   opacity: number
 }
 
-const MAX_ORDERS = 12
+const MAX_ORDERS = 9
 const LIFETIME_MS = 2600
 
 /**
@@ -50,8 +50,8 @@ export function SpendStream({ rate }: { rate: TokenBurnerData['rate'] }) {
         id: idRef.current++,
         text: fmt(value),
         side,
-        left: 3 + Math.random() * 34,
-        bottom: 6 + Math.random() * 26,
+        left: 2 + Math.random() * 52,
+        bottom: 2 + Math.random() * 12,
         fontSize: big ? 30 + Math.random() * 8 : 20 + Math.random() * 6,
         opacity: big ? 1 : 0.72 + Math.random() * 0.18,
       }

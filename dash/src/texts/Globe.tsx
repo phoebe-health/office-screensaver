@@ -1,17 +1,20 @@
 import { useEffect, useRef } from 'react'
 import createGlobe from 'cobe'
 import type { TextCity } from '../shared/types'
-import { rgb01, theme } from '../shared/theme'
+import { rgb01 } from '../shared/theme'
 
 // Phoebe "hub" for the live arcs — SF HQ. Arcs fire hub -> event city.
 const HUB: [number, number] = [37.77, -122.42]
 // US-forward framing: face North America, gentle tilt.
 const START_PHI = 4.9
 const THETA = 0.32
-const AUTO_SPEED = 0.0022
+const AUTO_SPEED = 0.0018
 
-const CYAN = rgb01(theme.texts)
-const IMSG = rgb01(theme.green)
+// Phoebe paper palette (cobe wants raw [r,g,b] 0..1).
+const SKY = rgb01('#71cff0') // SMS — marker + sms arcs
+const IRIS = rgb01('#5b5bd6') // signature — imessage arcs, kept subtle
+const DOT = rgb01('#3a4f60') // softened ink for the landmass dot grid
+const GLOW = rgb01('#faf4ec') // near-paper edge glow
 
 export interface ArcSpec {
   lat: number
@@ -70,7 +73,7 @@ export function Globe({ locations, arcs }: GlobeProps) {
     arcsRef.current = arcs.map((a) => ({
       from: HUB,
       to: [a.lat, a.lng] as [number, number],
-      color: a.channel === 'imessage' ? IMSG : CYAN,
+      color: a.channel === 'imessage' ? IRIS : SKY,
     }))
   }, [arcs])
 
@@ -100,20 +103,20 @@ export function Globe({ locations, arcs }: GlobeProps) {
       height: sizeRef.current,
       phi: phiRef.current,
       theta: THETA,
-      dark: 1,
-      diffuse: 1.25,
+      dark: 0,
+      diffuse: 1.15,
       scale: 1,
       mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.28, 0.31, 0.36],
-      markerColor: CYAN,
-      glowColor: [0.16, 0.42, 0.56],
+      mapBrightness: 3.4,
+      baseColor: DOT,
+      markerColor: SKY,
+      glowColor: GLOW,
       offset: [0, 0],
       markers: markersRef.current,
       arcs: arcsRef.current,
-      arcColor: CYAN,
-      arcWidth: 0.55,
-      arcHeight: 0.32,
+      arcColor: SKY,
+      arcWidth: 0.4,
+      arcHeight: 0.28,
       markerElevation: 0.02,
     })
 
@@ -180,14 +183,8 @@ export function Globe({ locations, arcs }: GlobeProps) {
         placeItems: 'center',
       }}
     >
-      <div
-        className="lt-glow"
-        style={{
-          width: '62%',
-          height: '62%',
-          background: `radial-gradient(circle, ${theme.cyan} 0%, transparent 70%)`,
-        }}
-      />
+      <div className="lt-globe-wash" />
+      <div className="lt-globe-ring" />
       <canvas
         ref={canvasRef}
         className="lt-globe-canvas"
