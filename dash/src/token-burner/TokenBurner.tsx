@@ -1,11 +1,14 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import NumberFlow from '@number-flow/react'
 import { useLiveData, useAnimationFrame } from '../shared/useLiveData'
 import type { TokenBurnerData } from '../shared/types'
-import { theme } from '../shared/theme'
-import { compact, usd, withCommas } from '../shared/format'
-import { Odometer } from './Odometer'
+import { compact, usd } from '../shared/format'
 import { BurnChart } from './BurnChart'
+import { SpendStream } from './SpendStream'
 import './styles.css'
+
+// Model bar palette: iris (signature) → ember (heat) → sky.
+const MODEL_COLORS = ['var(--iris-500)', 'var(--ember-500)', 'var(--sky-500)']
 
 export function TokenBurner() {
   const data = useLiveData<TokenBurnerData>('./data/token-burner.json')
@@ -16,15 +19,23 @@ export function TokenBurner() {
 
   // Extrapolated display values, updated imperatively at 60fps.
   const tokRef = useRef(0)
+  const todayRef = useRef(0)
   const costRef = useRef(0)
   const costElRef = useRef<HTMLSpanElement | null>(null)
   const baseRef = useRef<{
     tok: number
+    today: number
     cost: number
     elapsed: number
     updatedAt: string
   } | null>(null)
   const initedRef = useRef(false)
+
+  // Rounded values pushed to React on a throttle so NumberFlow animates smooth
+  // digit rolls (never set state at 60fps).
+  const [displayTok, setDisplayTok] = useState(0)
+  const [displayToday, setDisplayToday] = useState(0)
+  const lastPushRef = useRef(0)
 
   useAnimationFrame((dt, elapsed) => {
     const d = dataRef.current
@@ -34,12 +45,14 @@ export function TokenBurner() {
     if (!baseRef.current || baseRef.current.updatedAt !== d.updatedAt) {
       baseRef.current = {
         tok: d.totals.tokensAllTime,
+        today: d.totals.tokensToday,
         cost: d.totals.costTodayUsd,
         elapsed,
         updatedAt: d.updatedAt,
       }
       if (!initedRef.current) {
         tokRef.current = d.totals.tokensAllTime
+        todayRef.current = d.totals.tokensToday
         costRef.current = d.totals.costTodayUsd
         initedRef.current = true
       }
@@ -48,107 +61,131 @@ export function TokenBurner() {
     const b = baseRef.current
     const secs = elapsed - b.elapsed
     const tokTarget = b.tok + d.rate.tokensPerSecond * secs
+    const todayTarget = b.today + d.rate.tokensPerSecond * secs
     const costTarget = b.cost + d.rate.usdPerSecond * secs
     const k = Math.min(1, dt * 2.5)
 
     // Cumulative burn only ever moves forward — ease up toward the target so a
     // fresh snapshot reconciles smoothly and never counts backward.
     if (tokTarget > tokRef.current) tokRef.current += (tokTarget - tokRef.current) * k
+    if (todayTarget > todayRef.current)
+      todayRef.current += (todayTarget - todayRef.current) * k
     // Today's spend can reset at UTC midnight, so ease in both directions.
     costRef.current += (costTarget - costRef.current) * k
 
     if (costElRef.current) costElRef.current.textContent = usd(costRef.current)
+
+    // Throttle the NumberFlow-driving state to ~every 130ms.
+    const nowMs = performance.now()
+    if (nowMs - lastPushRef.current > 130) {
+      lastPushRef.current = nowMs
+      setDisplayTok(Math.floor(tokRef.current))
+      setDisplayToday(Math.floor(todayRef.current))
+    }
   })
 
   if (!data) {
     return (
       <div className="tb tb-loading">
-        <div className="ember-bg" />
         <div className="loading-inner">
-          <span className="flame">🔥</span>
-          <span className="loading-text">igniting the burner…</span>
+          <img
+            src="./flower-mark.svg"
+            width={64}
+            height={64}
+            className="loading-mark"
+            alt=""
+          />
+          <span className="loading-text">warming up the burner</span>
         </div>
       </div>
     )
   }
 
-  const digitCount = String(Math.floor(data.totals.tokensAllTime)).length
   const tps = data.rate.tokensPerSecond
-  const modelColors = [theme.burner, theme.purple]
 
   return (
     <div className="tb">
-      <div className="ember-bg" />
-      <div className="scanlines" />
-
       <header className="tb-header">
-        <div className="wordmark">phoebe</div>
-        <div className="title">
-          TOKEN <span className="title-accent">BURNER</span> <span className="fire">🔥</span>
+        <div className="brand">
+          <img
+            src="./flower-mark.svg"
+            width={38}
+            height={38}
+            className="brand-mark"
+            alt=""
+          />
+          <span className="wordmark">phoebe</span>
         </div>
         <div className="live-tag">
           <span className="live-dot" />
-          live from production
+          live
         </div>
       </header>
 
-      <main className="tb-main">
-        <section className="hero">
-          <div className="hero-label">total tokens burned · all time</div>
-          <Odometer valueRef={tokRef} digitCount={digitCount} className="hero-odo" />
-          <div className="stat-row">
-            <div className="stat">
-              <div className="stat-label">est. spend today</div>
-              <div className="stat-value">
-                <span ref={costElRef}>{usd(data.totals.costTodayUsd)}</span>
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-label">tokens today</div>
-              <div className="stat-value">{compact(data.totals.tokensToday)}</div>
-            </div>
-            <div className="stat rate-stat">
-              <div className="stat-label">burning right now</div>
-              <div className="stat-value">
-                <span className="mini-fire">🔥</span> ~{Math.round(tps)}
-                <span className="unit"> tok/s</span>
-              </div>
-              <div className="io-split">
-                {Math.round(data.rate.inputTokensPerSecond)} in ·{' '}
-                {Math.round(data.rate.outputTokensPerSecond)} out
-              </div>
-            </div>
+      <section className="hero">
+        <div className="eyebrow hero-eyebrow">Total tokens burned · all time</div>
+        <NumberFlow
+          value={displayTok}
+          className="hero-number"
+          format={{ useGrouping: true }}
+        />
+      </section>
+
+      <section className="stat-row">
+        <div className="stat">
+          <div className="stat-label">Est. spend today</div>
+          <div className="stat-value">
+            <span ref={costElRef}>{usd(data.totals.costTodayUsd)}</span>
           </div>
-        </section>
+        </div>
+        <div className="stat">
+          <div className="stat-label">Tokens today</div>
+          <div className="stat-value">{compact(displayToday || data.totals.tokensToday)}</div>
+        </div>
+        <div className="stat rate-stat">
+          <div className="stat-label">Burning right now</div>
+          <div className="stat-value">
+            <span className="rate-flame">🔥</span>
+            {Math.round(tps)}
+            <span className="stat-unit">tok/s</span>
+          </div>
+          <div className="io-split">
+            <span className="io-in">{Math.round(data.rate.inputTokensPerSecond)} in</span>
+            {' · '}
+            <span className="io-out">{Math.round(data.rate.outputTokensPerSecond)} out</span>
+          </div>
+        </div>
+      </section>
 
-        <section className="chart-band">
+      <section className="chart-band">
+        <div className="chart-inner">
           <BurnChart data={data} />
-        </section>
+        </div>
+        <SpendStream rate={data.rate} />
+      </section>
 
-        <section className="models">
-          {data.byModel.map((m, i) => (
+      <section className="models">
+        {data.byModel.map((m, i) => {
+          const c = MODEL_COLORS[i % MODEL_COLORS.length]
+          return (
             <div className="model-row" key={m.model}>
               <div className="model-head">
                 <span className="model-label">{m.label}</span>
-                <span className="model-share" style={{ color: modelColors[i % modelColors.length] }}>
+                <span className="model-share" style={{ color: c }}>
                   {Math.round(m.share * 100)}%
                 </span>
               </div>
               <div className="model-bar">
                 <div
                   className="model-fill"
-                  style={{
-                    width: `${Math.max(1.5, m.share * 100)}%`,
-                    background: `linear-gradient(90deg, ${modelColors[i % modelColors.length]}44, ${modelColors[i % modelColors.length]})`,
-                    boxShadow: `0 0 24px ${modelColors[i % modelColors.length]}88`,
-                  }}
+                  style={{ width: `${Math.max(1.5, m.share * 100)}%`, background: c }}
                 />
               </div>
-              <div className="model-rate">{withCommas(m.tokensPerSecond)} tok/s</div>
+              <div className="model-rate">{Math.round(m.tokensPerSecond)} tok/s</div>
             </div>
-          ))}
-        </section>
-      </main>
+          )
+        })}
+      </section>
 
       <footer className="tb-footer">
         <span>for fun · approximate</span>

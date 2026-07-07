@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { Liveline } from 'liveline'
 import type { LivelinePoint } from 'liveline'
-import { theme } from '../shared/theme'
 import type { TokenBurnerData } from '../shared/types'
 
 const MAX_POINTS = 120
+const IRIS = '#5E3CFF' // var(--iris-500) — Liveline needs a raw hex.
 
 // Re-anchor a snapshot's series so its last sample lands at "now" (1s spacing).
 // Keeps the time axis continuous regardless of clock skew between the committed
@@ -18,7 +18,9 @@ function anchorSeries(series: TokenBurnerData['series']): LivelinePoint[] {
 /**
  * The live tokens/sec band. Seeds from the snapshot's `series`, then appends a
  * jittered point every second so the line breathes between 60s refreshes.
- * `degen` + `momentum` make bursts pop with particles and directional glow.
+ * Styled to the Phoebe system: a thin iris line + faint iris area, mono axes,
+ * a pulsing end-dot and an iris current-value pill. `momentum` kept, `degen`
+ * dropped (too frenetic for the calm paper theme).
  */
 export function BurnChart({ data }: { data: TokenBurnerData }) {
   const [points, setPoints] = useState<LivelinePoint[]>(() =>
@@ -57,16 +59,19 @@ export function BurnChart({ data }: { data: TokenBurnerData }) {
     <Liveline
       data={points}
       value={value}
-      color={theme.burner}
-      theme="dark"
+      color={IRIS}
+      theme="light"
       fill
       grid
       pulse
+      badge
       momentum
-      degen={{ scale: 1.4 }}
-      lineWidth={3}
+      lineWidth={2.5}
       showValue
       formatValue={(v) => `${Math.round(v)} tok/s`}
+      formatTime={(t) =>
+        new Date(t * 1000).toLocaleTimeString('en-US', { hour12: false })
+      }
       style={{ width: '100%', height: '100%' }}
     />
   )
