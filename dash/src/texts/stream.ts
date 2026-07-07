@@ -71,11 +71,21 @@ export function useTextStream(data: TextsData | null): FeedRow[] {
   dataRef.current = data
   const seeded = useRef(false)
 
-  // Seed once from the first authoritative snapshot.
+  // Seed once from the first authoritative snapshot. Re-stamp the seed rows to
+  // recent, staggered times so a freshly-loaded screen doesn't show every row as
+  // hours-old (the committed snapshot's timestamps can be up to ~15 min stale).
   useEffect(() => {
     if (!data || seeded.current) return
     seeded.current = true
-    setRows(data.recent.slice(0, MAX_ROWS).map((e) => ({ ...e, id: nextId() })))
+    const gap = (60 / Math.max(1, data.rate.textsPerMinute || 8)) * 1000
+    const t0 = Date.now()
+    setRows(
+      data.recent.slice(0, MAX_ROWS).map((e, i) => ({
+        ...e,
+        id: nextId(),
+        ts: new Date(t0 - i * gap).toISOString(),
+      })),
+    )
   }, [data])
 
   // Emit synthetic rows at the live cadence, with a little human jitter.

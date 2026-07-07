@@ -49,8 +49,9 @@ export function Odometer({
 
   const cells: ReactNode[] = []
   places.forEach((_, idx) => {
-    const digitsFromRight = digitCount - 1 - idx
-    if (digitsFromRight > 0 && digitsFromRight % 3 === 0) {
+    // Thousands separator before a cell when the digits remaining (including it)
+    // are a positive multiple of 3 — and never before the leading digit.
+    if (idx > 0 && (digitCount - idx) % 3 === 0) {
       cells.push(
         <span key={`c${idx}`} className="odo-comma">
           ,
