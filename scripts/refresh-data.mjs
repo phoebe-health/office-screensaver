@@ -41,22 +41,36 @@ async function logfire(sql) {
     if (res.status === 401) continue
     if (!res.ok) throw new Error(`Logfire ${res.status}: ${(await res.text()).slice(0, 200)}`)
     const body = await res.json()
-    // v1 returns { columns:[{name,values:[...]}], ... } or { rows:[...] }; normalize to rows.
-    if (Array.isArray(body.rows)) return body.rows
-    if (Array.isArray(body.columns)) {
-      const cols = body.columns
-      const n = cols[0]?.values?.length ?? 0
-      const rows = []
-      for (let i = 0; i < n; i++) {
-        const r = {}
-        for (const c of cols) r[c.name] = c.values[i]
-        rows.push(r)
-      }
-      return rows
-    }
-    return []
+    return normalizeRows(body)
   }
   throw new Error('Logfire auth failed (401) with and without Bearer prefix')
+}
+
+// Normalize the various JSON shapes the Logfire query API may return into an
+// array of row objects: {rows:[{}]}, {columns:[{name,values}]}, or
+// {columns:[names], rows:[[...]]}.
+function normalizeRows(body) {
+  if (!body || typeof body !== 'object') return []
+  const cols = body.columns
+  const rows = body.rows
+  if (Array.isArray(rows) && (rows.length === 0 || !Array.isArray(rows[0]))) {
+    return rows // already array of objects
+  }
+  if (Array.isArray(cols) && cols.length && typeof cols[0] === 'object' && 'values' in cols[0]) {
+    const n = cols[0].values?.length ?? 0
+    const out = []
+    for (let i = 0; i < n; i++) {
+      const r = {}
+      for (const c of cols) r[c.name] = c.values[i]
+      out.push(r)
+    }
+    return out
+  }
+  if (Array.isArray(cols) && Array.isArray(rows) && Array.isArray(rows[0])) {
+    const names = cols.map((c) => (typeof c === 'string' ? c : c.name))
+    return rows.map((row) => Object.fromEntries(names.map((nm, i) => [nm, row[i]])))
+  }
+  return []
 }
 
 const readJSON = (f, fallback) => {
