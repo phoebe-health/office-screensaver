@@ -53,26 +53,38 @@
   pointer-events: none;
 }
 
-/* Soft paper wash behind the globe (replaces the old cyan glow). */
+/* Soft paper wash behind the globe (replaces the old cyan glow).
+   No filter: a pre-soft radial gradient is cheap; a live blur under a spinning
+   canvas forces re-compositing every frame on weak players. */
 .lt-globe-wash {
   position: absolute;
   width: 78%;
   height: 78%;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(91, 91, 214, 0.06) 0%, transparent 68%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(91, 91, 214, 0.05) 0%, transparent 70%);
 }
 
-/* Radial mask fades the dotted globe softly into the paper at its edges. */
 .lt-globe-canvas {
   cursor: grab;
   touch-action: none;
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 62%, transparent 82%);
 }
 .lt-globe-canvas:active {
   cursor: grabbing;
+}
+
+/* Static paper vignette that fades the globe's limb into the page. Replaces a
+   per-frame mask on the live WebGL canvas (which was a major source of jank):
+   masking a canvas that redraws every frame re-runs the mask each frame, while
+   this overlay is painted once. */
+.lt-globe-vignette {
+  position: absolute;
+  width: min(100%, 100vh);
+  aspect-ratio: 1 / 1;
+  max-height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle closest-side at 50% 50%, transparent 80%, #fbf6ef 100%);
 }
 
 /* ---- Motion -------------------------------------------------------------- */

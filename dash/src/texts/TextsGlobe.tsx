@@ -44,7 +44,7 @@ function TodayCounter({ data }: { data: TextsData }) {
       const a = anchor.current
       const next = Math.round(a.count + ((performance.now() - a.t) / 1000) * a.perSec)
       setValue((prev) => (prev === next ? prev : next))
-    }, 120)
+    }, 500)
     return () => clearInterval(id)
   }, [])
 
@@ -52,6 +52,9 @@ function TodayCounter({ data }: { data: TextsData }) {
     <NumberFlow
       value={value}
       className="lt-counter"
+      trend={1}
+      spinTiming={{ duration: 480, easing: 'linear' }}
+      transformTiming={{ duration: 480, easing: 'linear' }}
       style={{
         fontFamily: MONO,
         fontSize: 'clamp(52px, 7vw, 148px)',

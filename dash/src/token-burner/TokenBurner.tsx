@@ -36,6 +36,7 @@ export function TokenBurner() {
   const [displayTok, setDisplayTok] = useState(0)
   const [displayToday, setDisplayToday] = useState(0)
   const lastPushRef = useRef(0)
+  const lastCostStrRef = useRef('')
 
   useAnimationFrame((dt, elapsed) => {
     const d = dataRef.current
@@ -73,11 +74,21 @@ export function TokenBurner() {
     // Today's spend can reset at UTC midnight, so ease in both directions.
     costRef.current += (costTarget - costRef.current) * k
 
-    if (costElRef.current) costElRef.current.textContent = usd(costRef.current)
+    // The $ figure barely moves (2 decimals), so only touch the DOM when the
+    // rendered string actually changes rather than every frame.
+    if (costElRef.current) {
+      const s = usd(costRef.current)
+      if (s !== lastCostStrRef.current) {
+        lastCostStrRef.current = s
+        costElRef.current.textContent = s
+      }
+    }
 
-    // Throttle the NumberFlow-driving state to ~every 130ms.
+    // Push the NumberFlow value on a cadence that matches its roll duration
+    // (~500ms) so each digit roll completes instead of being interrupted every
+    // frame — interrupted rolls are what read as "glitchy/blurry" on TV players.
     const nowMs = performance.now()
-    if (nowMs - lastPushRef.current > 130) {
+    if (nowMs - lastPushRef.current > 500) {
       lastPushRef.current = nowMs
       setDisplayTok(Math.floor(tokRef.current))
       setDisplayToday(Math.floor(todayRef.current))
@@ -128,6 +139,10 @@ export function TokenBurner() {
           value={displayTok}
           className="hero-number"
           format={{ useGrouping: true }}
+          trend={1}
+          spinTiming={{ duration: 480, easing: 'linear' }}
+          transformTiming={{ duration: 480, easing: 'linear' }}
+          opacityTiming={{ duration: 180, easing: 'ease-out' }}
         />
       </section>
 
