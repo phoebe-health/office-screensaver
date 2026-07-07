@@ -1,0 +1,50 @@
+name: Deploy office dashboards
+
+# Builds the Vite dashboards and publishes to GitHub Pages, keeping the existing
+# bouncing-logo screensaver untouched at the site root.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: dash/package-lock.json
+      - run: npm ci
+        working-directory: dash
+      - run: npm run build
+        working-directory: dash
+      - name: Assemble site (screensaver at /, dashboards under /dash)
+        run: |
+          rm -rf _site && mkdir -p _site
+          cp index.html _site/index.html
+          cp -r dash/dist _site/dash
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
