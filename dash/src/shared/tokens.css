@@ -1,0 +1,86 @@
+/* Phoebe Design System tokens — mirrored from core/src/server.ts tokensCss().
+   Do not hardcode brand colors elsewhere; reference these variables.
+   Satoshi (headings/labels) + JetBrains Mono (all numeric/data). No serif. */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --iris-900: #2a1a9e;
+  --iris-700: #432bd8;
+  --iris-500: #5e3cff;
+  --iris-300: #9b85ff;
+  --iris-100: #e4ddff;
+  --iris-050: #f3efff;
+  --ink-900: #0c1e2b;
+  --ink-700: #24384a;
+  --ink-500: #51677b;
+  --ink-400: #7a8da0;
+  --ink-300: #a9b7c7;
+  --ink-200: #d4dce5;
+  --ink-100: #e8edf2;
+  --ember-700: #b3541a;
+  --ember-500: #e97c2e;
+  --ember-300: #f5a968;
+  --ember-100: #fbe2cc;
+  --sky-500: #71cff0;
+  --sky-300: #a7dff0;
+  --sky-100: #c2ebf5;
+  --sky-050: #e4f5fa;
+  --meadow-700: #2f5544;
+  --meadow-500: #4f8a6f;
+  --meadow-100: #d8e8df;
+  --paper: #faf4ec;
+  --paper-deep: #f2e9da;
+  --snow: #ffffff;
+  --mist: #f5f7fa;
+  --success: #2f9868;
+  --warn: #e0a530;
+  --danger: #d14a3c;
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-22: 1.375rem;
+  --fs-28: 1.75rem;
+  --fs-36: 2.25rem;
+  --track-body: 0;
+  --track-eyebrow: 0.14em;
+  --lh-body: 1.5;
+  --s-4: 4px;
+  --s-8: 8px;
+  --s-12: 12px;
+  --s-16: 16px;
+  --s-20: 20px;
+  --s-24: 24px;
+  --s-32: 32px;
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+  --shadow-xs: 0 1px 2px color-mix(in srgb, var(--ink-900) 6%, transparent);
+  --shadow-sm: 0 2px 6px color-mix(in srgb, var(--ink-900) 7%, transparent),
+    0 1px 2px color-mix(in srgb, var(--ink-900) 4%, transparent);
+  --shadow-md: 0 10px 24px -8px color-mix(in srgb, var(--ink-900) 12%, transparent),
+    0 2px 6px color-mix(in srgb, var(--ink-900) 5%, transparent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-body);
+  color: var(--ink-900);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
