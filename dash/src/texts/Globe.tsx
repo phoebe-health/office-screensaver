@@ -8,11 +8,7 @@ const HUB: [number, number] = [37.77, -122.42]
 // US-forward framing: face North America, gentle tilt.
 const START_PHI = 4.9
 const THETA = 0.32
-// Rotation as angular velocity (rad/sec) so speed stays constant regardless of
-// frame rate; the globe also draws at a capped FPS to stay smooth on low-power
-// players (Apple TV / KitCast) instead of fighting for 60fps and stuttering.
-const ROT_PER_SEC = 0.108
-const DRAW_FPS = 30
+const AUTO_SPEED = 0.0018
 
 // Phoebe paper palette (cobe wants raw [r,g,b] 0..1).
 const SKY = rgb01('#71cff0') // SMS — marker + sms arcs
@@ -98,13 +94,10 @@ export function Globe({ locations, arcs }: GlobeProps) {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    // Cap DPR: at 2x on a 4K screen the globe redraws 4x the pixels every frame,
-    // which overwhelms weak players. 1.5 stays crisp while halving that load.
+    // Cap DPR: at 2x on a 4K screen the globe redraws 4x the pixels each frame.
+    // 1.5 stays crisp while easing load on low-power players (KitCast/Apple TV).
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
     let raf = 0
-    let lastT = 0
-    let sinceDraw = 0
-    const drawInterval = 1 / DRAW_FPS
 
     const globe = createGlobe(canvas, {
       devicePixelRatio: dpr,
@@ -115,8 +108,8 @@ export function Globe({ locations, arcs }: GlobeProps) {
       dark: 0,
       diffuse: 1.15,
       scale: 1,
-      // Fewer dots = far less per-frame GPU work; still reads as a dotted globe.
-      mapSamples: 11000,
+      // Fewer dots = less per-frame GPU work; still reads as a dotted globe.
+      mapSamples: 12000,
       mapBrightness: 3.4,
       baseColor: DOT,
       markerColor: SKY,
@@ -130,17 +123,10 @@ export function Globe({ locations, arcs }: GlobeProps) {
       markerElevation: 0.02,
     })
 
-    // rAF still ticks at the display rate, but we advance rotation by real elapsed
-    // time (constant speed under frame drops) and only redraw at DRAW_FPS.
-    const frame = (t: number) => {
-      raf = requestAnimationFrame(frame)
-      const dt = lastT ? Math.min((t - lastT) / 1000, 0.05) : 0
-      lastT = t
-      if (!draggingRef.current) phiRef.current += ROT_PER_SEC * dt
-      sinceDraw += dt
-      if (sinceDraw < drawInterval) return
-      sinceDraw = 0
+    const frame = () => {
+      if (!draggingRef.current) phiRef.current += AUTO_SPEED
       const px = sizeRef.current
+      // update() re-renders with the latest phi + live markers/arcs.
       globe.update({
         phi: phiRef.current,
         theta: THETA,
@@ -150,6 +136,7 @@ export function Globe({ locations, arcs }: GlobeProps) {
         markers: markersRef.current,
         arcs: arcsRef.current,
       })
+      raf = requestAnimationFrame(frame)
     }
     raf = requestAnimationFrame(frame)
 
@@ -211,7 +198,6 @@ export function Globe({ locations, arcs }: GlobeProps) {
           position: 'relative',
         }}
       />
-      <div className="lt-globe-vignette" />
     </div>
   )
 }
