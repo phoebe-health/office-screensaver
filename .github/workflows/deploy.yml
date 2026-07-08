@@ -6,6 +6,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The refresh-data job commits new feeds using the default GITHUB_TOKEN, whose
+  # pushes cannot trigger other workflows. Chain off its completion instead so
+  # fresh data actually reaches Pages.
+  workflow_run:
+    workflows: ['Refresh dashboard data']
+    types: [completed]
 
 permissions:
   contents: read
@@ -18,6 +24,8 @@ concurrency:
 
 jobs:
   build:
+    # For workflow_run, only deploy when the refresh actually succeeded.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
