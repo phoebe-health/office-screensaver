@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-07-18T23:33:00.930Z",
+  "updatedAt": "2026-07-19T00:03:50.926Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 10160365646,
-    "tokensToday": 66732831,
-    "costTodayUsd": 30.12
+    "tokensAllTime": 10161001130,
+    "tokensToday": 635484,
+    "costTodayUsd": 0.26
   },
   "rate": {
-    "tokensPerSecond": 1339.8,
-    "usdPerSecond": 0.000522,
-    "inputTokensPerSecond": 1328.4,
-    "outputTokensPerSecond": 11.4
+    "tokensPerSecond": 706.1,
+    "usdPerSecond": 0.000292,
+    "inputTokensPerSecond": 699.4,
+    "outputTokensPerSecond": 6.7
   },
   "series": [
-    {
-      "time": 1784335754,
-      "value": 1152.1
-    },
     {
       "time": 1784338334,
       "value": 780.5
@@ -172,20 +168,24 @@
     {
       "time": 1784417580,
       "value": 1339.8
+    },
+    {
+      "time": 1784419430,
+      "value": 706.1
     }
   ],
   "byModel": [
     {
       "model": "gemini-3.5-flash",
       "label": "Voice · Gemini 3.5 Flash",
-      "tokensPerSecond": 1326.2,
-      "share": 0.9899
+      "tokensPerSecond": 696.2,
+      "share": 0.986
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 13.6,
-      "share": 0.0101
+      "tokensPerSecond": 9.9,
+      "share": 0.014
     }
   ]
 }
