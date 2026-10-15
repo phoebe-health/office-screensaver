@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-15T20:48:06.462Z",
+  "updatedAt": "2026-10-15T21:04:15.385Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 57278594854,
-    "tokensToday": 1846201194,
-    "costTodayUsd": 1921.13
+    "tokensAllTime": 57327845804,
+    "tokensToday": 1895452144,
+    "costTodayUsd": 1972.75
   },
   "rate": {
-    "tokensPerSecond": 55227.6,
-    "usdPerSecond": 0.05812,
-    "inputTokensPerSecond": 54708.5,
-    "outputTokensPerSecond": 519.1
+    "tokensPerSecond": 54723.3,
+    "usdPerSecond": 0.05735,
+    "inputTokensPerSecond": 54222.1,
+    "outputTokensPerSecond": 501.2
   },
   "series": [
-    {
-      "time": 1792059899,
-      "value": 7286.7
-    },
     {
       "time": 1792060630,
       "value": 5244.9
@@ -172,38 +168,42 @@
     {
       "time": 1792097286,
       "value": 55227.6
+    },
+    {
+      "time": 1792098255,
+      "value": 54723.3
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 31176.8,
-      "share": 0.5645
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 22869.4,
-      "share": 0.4141
+      "tokensPerSecond": 28365.5,
+      "share": 0.5183
     },
     {
-      "model": "gpt-6-luna",
+      "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 628.4,
-      "share": 0.0114
+      "tokensPerSecond": 24956.8,
+      "share": 0.4561
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 297.4,
-      "share": 0.0054
+      "tokensPerSecond": 622.4,
+      "share": 0.0114
+    },
+    {
+      "model": "gpt-6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 602.3,
+      "share": 0.011
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 255.6,
-      "share": 0.0046
+      "tokensPerSecond": 176.3,
+      "share": 0.0032
     }
   ]
 }
