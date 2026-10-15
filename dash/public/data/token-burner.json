@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-15T17:33:57.086Z",
+  "updatedAt": "2026-10-15T17:46:52.633Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 56578472751,
-    "tokensToday": 1146079091,
-    "costTodayUsd": 1191.91
+    "tokensAllTime": 56643332174,
+    "tokensToday": 1210938514,
+    "costTodayUsd": 1259.29
   },
   "rate": {
-    "tokensPerSecond": 52952,
-    "usdPerSecond": 0.055774,
-    "inputTokensPerSecond": 52417.4,
-    "outputTokensPerSecond": 534.6
+    "tokensPerSecond": 72066,
+    "usdPerSecond": 0.074871,
+    "inputTokensPerSecond": 71529.4,
+    "outputTokensPerSecond": 536.6
   },
   "series": [
-    {
-      "time": 1792046311,
-      "value": 109.5
-    },
     {
       "time": 1792047687,
       "value": 43.5
@@ -172,38 +168,42 @@
     {
       "time": 1792085637,
       "value": 52952
+    },
+    {
+      "time": 1792086412,
+      "value": 72066
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 27289.1,
-      "share": 0.5154
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 24689.7,
-      "share": 0.4663
+      "tokensPerSecond": 49812.3,
+      "share": 0.6912
     },
     {
-      "model": "gpt-6-luna",
+      "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 685,
-      "share": 0.0129
-    },
-    {
-      "model": "claude-sonnet-4-6",
-      "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 218.8,
-      "share": 0.0041
+      "tokensPerSecond": 19980.7,
+      "share": 0.2773
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 69.5,
-      "share": 0.0013
+      "tokensPerSecond": 1193.8,
+      "share": 0.0166
+    },
+    {
+      "model": "gpt-6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 872.4,
+      "share": 0.0121
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "label": "Memory · Claude Sonnet 4.6",
+      "tokensPerSecond": 206.8,
+      "share": 0.0029
     }
   ]
 }
