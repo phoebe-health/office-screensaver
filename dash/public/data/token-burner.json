@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-16T18:05:18.156Z",
+  "updatedAt": "2026-10-16T18:28:01.573Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 59216313923,
-    "tokensToday": 1542783736,
-    "costTodayUsd": 1608.98
+    "tokensAllTime": 59266303765,
+    "tokensToday": 1592773578,
+    "costTodayUsd": 1660.74
   },
   "rate": {
-    "tokensPerSecond": 58325.3,
-    "usdPerSecond": 0.060646,
-    "inputTokensPerSecond": 57864.2,
-    "outputTokensPerSecond": 461.1
+    "tokensPerSecond": 55544.3,
+    "usdPerSecond": 0.057514,
+    "inputTokensPerSecond": 55162.4,
+    "outputTokensPerSecond": 381.8
   },
   "series": [
-    {
-      "time": 1792137065,
-      "value": 1263.6
-    },
     {
       "time": 1792137947,
       "value": 1164.2
@@ -172,38 +168,48 @@
     {
       "time": 1792173918,
       "value": 58325.3
+    },
+    {
+      "time": 1792175281,
+      "value": 55544.3
     }
   ],
   "byModel": [
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 35603.9,
-      "share": 0.6104
+      "tokensPerSecond": 32636.4,
+      "share": 0.5876
     },
     {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 21557.3,
-      "share": 0.3696
+      "tokensPerSecond": 21736,
+      "share": 0.3913
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 779.7,
-      "share": 0.0134
+      "tokensPerSecond": 631,
+      "share": 0.0114
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 246.4,
-      "share": 0.0042
+      "tokensPerSecond": 410.3,
+      "share": 0.0074
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 138,
-      "share": 0.0024
+      "tokensPerSecond": 130.3,
+      "share": 0.0023
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "label": "Other models",
+      "tokensPerSecond": 0.3,
+      "share": 0
     }
   ]
 }
