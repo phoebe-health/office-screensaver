@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-17T15:03:38.807Z",
+  "updatedAt": "2026-10-17T15:20:42.526Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 60890935565,
-    "tokensToday": 652067264,
-    "costTodayUsd": 677.73
+    "tokensAllTime": 61012276099,
+    "tokensToday": 773407798,
+    "costTodayUsd": 801.58
   },
   "rate": {
-    "tokensPerSecond": 28816.5,
-    "usdPerSecond": 0.030284,
-    "inputTokensPerSecond": 28463.2,
-    "outputTokensPerSecond": 353.3
+    "tokensPerSecond": 134822.8,
+    "usdPerSecond": 0.137606,
+    "inputTokensPerSecond": 134235.4,
+    "outputTokensPerSecond": 587.4
   },
   "series": [
-    {
-      "time": 1792212545,
-      "value": 6721.7
-    },
     {
       "time": 1792213429,
       "value": 660.2
@@ -172,38 +168,42 @@
     {
       "time": 1792249418,
       "value": 28816.5
+    },
+    {
+      "time": 1792250442,
+      "value": 134822.8
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 22833.8,
-      "share": 0.7924
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 5652.6,
-      "share": 0.1962
+      "tokensPerSecond": 119718.2,
+      "share": 0.888
     },
     {
-      "model": "us.anthropic.claude-opus-4-8",
+      "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 169.8,
-      "share": 0.0059
+      "tokensPerSecond": 13715.3,
+      "share": 0.1017
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 144.7,
-      "share": 0.005
+      "tokensPerSecond": 1215.6,
+      "share": 0.009
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 15.6,
-      "share": 0.0005
+      "tokensPerSecond": 135.6,
+      "share": 0.001
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 38.1,
+      "share": 0.0003
     }
   ]
 }
