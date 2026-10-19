@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-19T20:37:57.140Z",
+  "updatedAt": "2026-10-19T20:48:35.103Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 65501540303,
-    "tokensToday": 2075320295,
-    "costTodayUsd": 2157.61
+    "tokensAllTime": 65542623263,
+    "tokensToday": 2116403255,
+    "costTodayUsd": 2200.71
   },
   "rate": {
-    "tokensPerSecond": 45306.5,
-    "usdPerSecond": 0.047734,
-    "inputTokensPerSecond": 44867.1,
-    "outputTokensPerSecond": 439.5
+    "tokensPerSecond": 45647.7,
+    "usdPerSecond": 0.047886,
+    "inputTokensPerSecond": 45235.1,
+    "outputTokensPerSecond": 412.7
   },
   "series": [
-    {
-      "time": 1792404635,
-      "value": 18473
-    },
     {
       "time": 1792405569,
       "value": 12656.1
@@ -172,38 +168,48 @@
     {
       "time": 1792442277,
       "value": 45306.5
+    },
+    {
+      "time": 1792442915,
+      "value": 45647.7
     }
   ],
   "byModel": [
     {
-      "model": "gpt-5.6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 25083.9,
-      "share": 0.5536
-    },
-    {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 19097,
-      "share": 0.4215
+      "tokensPerSecond": 23407.8,
+      "share": 0.5128
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 21163.1,
+      "share": 0.4636
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 667,
-      "share": 0.0147
+      "tokensPerSecond": 618.7,
+      "share": 0.0136
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 246.8,
-      "share": 0.0054
+      "tokensPerSecond": 279.8,
+      "share": 0.0061
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 211.9,
-      "share": 0.0047
+      "tokensPerSecond": 177.8,
+      "share": 0.0039
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "label": "Other models",
+      "tokensPerSecond": 0.5,
+      "share": 0
     }
   ]
 }
