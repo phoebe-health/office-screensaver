@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-19T21:03:53.782Z",
+  "updatedAt": "2026-10-19T21:22:48.115Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 65586617194,
-    "tokensToday": 2160397186,
-    "costTodayUsd": 2246.62
+    "tokensAllTime": 65631522190,
+    "tokensToday": 2205302182,
+    "costTodayUsd": 2293.19
   },
   "rate": {
-    "tokensPerSecond": 48882.1,
-    "usdPerSecond": 0.051011,
-    "inputTokensPerSecond": 48419.7,
-    "outputTokensPerSecond": 462.4
+    "tokensPerSecond": 49894.4,
+    "usdPerSecond": 0.051744,
+    "inputTokensPerSecond": 49533.8,
+    "outputTokensPerSecond": 360.6
   },
   "series": [
-    {
-      "time": 1792406338,
-      "value": 5523.4
-    },
     {
       "time": 1792406967,
       "value": 4223.2
@@ -172,38 +168,42 @@
     {
       "time": 1792443833,
       "value": 48882.1
+    },
+    {
+      "time": 1792444968,
+      "value": 49894.4
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 26253.8,
-      "share": 0.5371
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 21777,
-      "share": 0.4455
+      "tokensPerSecond": 32638.4,
+      "share": 0.6541
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 15795.6,
+      "share": 0.3166
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 564.7,
-      "share": 0.0116
+      "tokensPerSecond": 723,
+      "share": 0.0145
     },
     {
-      "model": "us.anthropic.claude-opus-4-8",
+      "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 207.1,
-      "share": 0.0042
+      "tokensPerSecond": 613.8,
+      "share": 0.0123
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 79.6,
-      "share": 0.0016
+      "tokensPerSecond": 123.6,
+      "share": 0.0025
     }
   ]
 }
