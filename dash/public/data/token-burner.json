@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-20T17:47:51.284Z",
+  "updatedAt": "2026-10-20T18:05:26.587Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 67391041886,
-    "tokensToday": 1476039845,
-    "costTodayUsd": 1536.24
+    "tokensAllTime": 67444308833,
+    "tokensToday": 1529306792,
+    "costTodayUsd": 1592.2
   },
   "rate": {
-    "tokensPerSecond": 45614.9,
-    "usdPerSecond": 0.047813,
-    "inputTokensPerSecond": 45189,
-    "outputTokensPerSecond": 425.9
+    "tokensPerSecond": 59185.5,
+    "usdPerSecond": 0.062177,
+    "inputTokensPerSecond": 58503.3,
+    "outputTokensPerSecond": 682.2
   },
   "series": [
-    {
-      "time": 1792479726,
-      "value": 427.1
-    },
     {
       "time": 1792481417,
       "value": 557
@@ -172,37 +168,47 @@
     {
       "time": 1792518471,
       "value": 45614.9
+    },
+    {
+      "time": 1792519526,
+      "value": 59185.5
     }
   ],
   "byModel": [
     {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 23110.6,
-      "share": 0.5066
+      "tokensPerSecond": 32288.2,
+      "share": 0.5455
     },
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 21778.4,
-      "share": 0.4774
+      "tokensPerSecond": 26116.2,
+      "share": 0.4413
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 570.6,
-      "share": 0.0125
+      "tokensPerSecond": 657.5,
+      "share": 0.0111
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 155,
-      "share": 0.0034
+      "tokensPerSecond": 79.3,
+      "share": 0.0013
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 43.6,
+      "share": 0.0007
     },
     {
       "model": "claude-haiku-4-5-20251001",
       "label": "Other models",
-      "tokensPerSecond": 0.2,
+      "tokensPerSecond": 0.8,
       "share": 0
     }
   ]
