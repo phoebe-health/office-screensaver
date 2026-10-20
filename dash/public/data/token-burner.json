@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-20T22:04:11.379Z",
+  "updatedAt": "2026-10-20T22:22:48.011Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 68192522740,
-    "tokensToday": 2277520699,
-    "costTodayUsd": 2383.66
+    "tokensAllTime": 68250222732,
+    "tokensToday": 2335220691,
+    "costTodayUsd": 2453.43
   },
   "rate": {
-    "tokensPerSecond": 35016.8,
-    "usdPerSecond": 0.046942,
-    "inputTokensPerSecond": 34304,
-    "outputTokensPerSecond": 712.8
+    "tokensPerSecond": 64111.1,
+    "usdPerSecond": 0.077519,
+    "inputTokensPerSecond": 63317.8,
+    "outputTokensPerSecond": 793.3
   },
   "series": [
-    {
-      "time": 1792496129,
-      "value": 25001.7
-    },
     {
       "time": 1792496882,
       "value": 14183.2
@@ -172,43 +168,41 @@
     {
       "time": 1792533851,
       "value": 35016.8
+    },
+    {
+      "time": 1792534968,
+      "value": 64111.1
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 21686.2,
-      "share": 0.6193
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 10036.7,
-      "share": 0.2866
+      "tokensPerSecond": 45912.9,
+      "share": 0.7161
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 14214.4,
+      "share": 0.2217
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 2976,
-      "share": 0.085
+      "tokensPerSecond": 3366.7,
+      "share": 0.0525
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 273,
-      "share": 0.0078
-    },
-    {
-      "model": "claude-sonnet-5",
-      "label": "Other models",
-      "tokensPerSecond": 44.3,
-      "share": 0.0013
+      "tokensPerSecond": 616.3,
+      "share": 0.0096
     },
     {
       "model": "claude-haiku-4-5-20251001",
       "label": "Other models",
-      "tokensPerSecond": 0.6,
+      "tokensPerSecond": 0.8,
       "share": 0
     }
   ]
