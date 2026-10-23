@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-23T18:47:07.349Z",
+  "updatedAt": "2026-10-23T19:03:48.453Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 74788669341,
-    "tokensToday": 1649887049,
-    "costTodayUsd": 1717.84
+    "tokensAllTime": 74825022572,
+    "tokensToday": 1686240280,
+    "costTodayUsd": 1755.57
   },
   "rate": {
-    "tokensPerSecond": 85978.5,
-    "usdPerSecond": 0.089936,
-    "inputTokensPerSecond": 85439.1,
-    "outputTokensPerSecond": 539.5
+    "tokensPerSecond": 40392.5,
+    "usdPerSecond": 0.041923,
+    "inputTokensPerSecond": 40055,
+    "outputTokensPerSecond": 337.5
   },
   "series": [
-    {
-      "time": 1792742741,
-      "value": 567.6
-    },
     {
       "time": 1792744326,
       "value": 298.5
@@ -172,32 +168,42 @@
     {
       "time": 1792781227,
       "value": 85978.5
+    },
+    {
+      "time": 1792782228,
+      "value": 40392.5
     }
   ],
   "byModel": [
     {
-      "model": "gpt-5.6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 66642.9,
-      "share": 0.7751
-    },
-    {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 17914.2,
-      "share": 0.2084
+      "tokensPerSecond": 20172.8,
+      "share": 0.4994
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 19662.9,
+      "share": 0.4868
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 866.6,
-      "share": 0.0101
+      "tokensPerSecond": 463.7,
+      "share": 0.0115
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 554.8,
-      "share": 0.0065
+      "tokensPerSecond": 55.1,
+      "share": 0.0014
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 37.9,
+      "share": 0.0009
     }
   ]
 }
