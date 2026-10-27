@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-27T19:02:57.642Z",
+  "updatedAt": "2026-10-27T19:17:08.055Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 81674558803,
-    "tokensToday": 1543081152,
-    "costTodayUsd": 1605.26
+    "tokensAllTime": 81744061521,
+    "tokensToday": 1612583870,
+    "costTodayUsd": 1677.22
   },
   "rate": {
-    "tokensPerSecond": 51347.2,
-    "usdPerSecond": 0.053465,
-    "inputTokensPerSecond": 50881.1,
-    "outputTokensPerSecond": 466.2
+    "tokensPerSecond": 77225.2,
+    "usdPerSecond": 0.079953,
+    "inputTokensPerSecond": 76646.2,
+    "outputTokensPerSecond": 579
   },
   "series": [
-    {
-      "time": 1793087644,
-      "value": 30.2
-    },
     {
       "time": 1793088359,
       "value": 271.8
@@ -172,38 +168,48 @@
     {
       "time": 1793127777,
       "value": 51347.2
+    },
+    {
+      "time": 1793128628,
+      "value": 77225.2
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 25754.5,
-      "share": 0.5016
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 24946.6,
-      "share": 0.4858
+      "tokensPerSecond": 45932,
+      "share": 0.5948
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 30093.7,
+      "share": 0.3897
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 524.8,
-      "share": 0.0102
+      "tokensPerSecond": 1003.9,
+      "share": 0.013
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 76.3,
-      "share": 0.0015
+      "tokensPerSecond": 124.7,
+      "share": 0.0016
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 45,
+      "tokensPerSecond": 70.5,
       "share": 0.0009
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "label": "Other models",
+      "tokensPerSecond": 0.5,
+      "share": 0
     }
   ]
 }
