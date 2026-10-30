@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-10-30T11:02:33.051Z",
+  "updatedAt": "2026-10-30T11:16:51.513Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 88566057367,
-    "tokensToday": 452509029,
-    "costTodayUsd": 1304.7
+    "tokensAllTime": 88585889576,
+    "tokensToday": 472341238,
+    "costTodayUsd": 1325.22
   },
   "rate": {
-    "tokensPerSecond": 11127.7,
-    "usdPerSecond": 0.011505,
-    "inputTokensPerSecond": 11033.5,
-    "outputTokensPerSecond": 94.2
+    "tokensPerSecond": 22035.8,
+    "usdPerSecond": 0.022798,
+    "inputTokensPerSecond": 21856.3,
+    "outputTokensPerSecond": 179.5
   },
   "series": [
-    {
-      "time": 1793321980,
-      "value": 43751.2
-    },
     {
       "time": 1793322978,
       "value": 36325.6
@@ -172,38 +168,42 @@
     {
       "time": 1793358153,
       "value": 11127.7
+    },
+    {
+      "time": 1793359011,
+      "value": 22035.8
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 6297.2,
-      "share": 0.5659
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 4802.9,
-      "share": 0.4316
+      "tokensPerSecond": 11419.3,
+      "share": 0.5182
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 10339.9,
+      "share": 0.4692
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 17.4,
-      "share": 0.0016
+      "tokensPerSecond": 190.1,
+      "share": 0.0086
     },
     {
-      "model": "claude-opus-4-8",
+      "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 9.2,
-      "share": 0.0008
+      "tokensPerSecond": 72.6,
+      "share": 0.0033
     },
     {
-      "model": "claude-haiku-4-5-20251001",
-      "label": "Other models",
-      "tokensPerSecond": 0.9,
-      "share": 0.0001
+      "model": "claude-sonnet-4-6",
+      "label": "Memory · Claude Sonnet 4.6",
+      "tokensPerSecond": 13.9,
+      "share": 0.0006
     }
   ]
 }
