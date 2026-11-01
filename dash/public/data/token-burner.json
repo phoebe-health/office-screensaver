@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-01T14:16:27.908Z",
+  "updatedAt": "2026-11-01T14:31:38.012Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 94245252044,
-    "tokensToday": 748686774,
-    "costTodayUsd": 1964.58
+    "tokensAllTime": 94271092285,
+    "tokensToday": 774527015,
+    "costTodayUsd": 2009.15
   },
   "rate": {
-    "tokensPerSecond": 55707.9,
-    "usdPerSecond": 0.078666,
-    "inputTokensPerSecond": 54379.8,
-    "outputTokensPerSecond": 1328.1
+    "tokensPerSecond": 28711.4,
+    "usdPerSecond": 0.049519,
+    "inputTokensPerSecond": 27559.2,
+    "outputTokensPerSecond": 1152.2
   },
   "series": [
-    {
-      "time": 1793507511,
-      "value": 7279.3
-    },
     {
       "time": 1793508410,
       "value": 8031.1
@@ -172,44 +168,36 @@
     {
       "time": 1793542587,
       "value": 55707.9
+    },
+    {
+      "time": 1793543498,
+      "value": 28711.4
     }
   ],
   "byModel": [
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 37611.6,
-      "share": 0.6752
+      "tokensPerSecond": 16914.6,
+      "share": 0.5891
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 13289.7,
-      "share": 0.2386
+      "tokensPerSecond": 7556.5,
+      "share": 0.2632
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 4749.4,
-      "share": 0.0853
+      "tokensPerSecond": 4157.9,
+      "share": 0.1448
     },
     {
-      "model": "claude-sonnet-5",
+      "model": "gpt-5.6-sol",
       "label": "Other models",
-      "tokensPerSecond": 42.1,
-      "share": 0.0008
-    },
-    {
-      "model": "claude-opus-4-8",
-      "label": "Other models",
-      "tokensPerSecond": 14.6,
-      "share": 0.0003
-    },
-    {
-      "model": "claude-haiku-4-5-20251001",
-      "label": "Other models",
-      "tokensPerSecond": 0.5,
-      "share": 0
+      "tokensPerSecond": 82.4,
+      "share": 0.0029
     }
   ]
 }
