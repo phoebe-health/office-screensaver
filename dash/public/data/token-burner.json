@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-03T16:31:44.870Z",
+  "updatedAt": "2026-11-03T16:46:40.036Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 100204707590,
-    "tokensToday": 1405857415,
-    "costTodayUsd": 1639.15
+    "tokensAllTime": 100298698822,
+    "tokensToday": 1499848647,
+    "costTodayUsd": 1746.46
   },
   "rate": {
-    "tokensPerSecond": 80959.9,
-    "usdPerSecond": 0.088517,
-    "inputTokensPerSecond": 80227,
-    "outputTokensPerSecond": 732.9
+    "tokensPerSecond": 104434.7,
+    "usdPerSecond": 0.119237,
+    "inputTokensPerSecond": 103560.7,
+    "outputTokensPerSecond": 874
   },
   "series": [
-    {
-      "time": 1793688375,
-      "value": 674.4
-    },
     {
       "time": 1793689409,
       "value": 2218
@@ -172,38 +168,48 @@
     {
       "time": 1793723504,
       "value": 80959.9
+    },
+    {
+      "time": 1793724400,
+      "value": 104434.7
     }
   ],
   "byModel": [
     {
-      "model": "gpt-5.6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 37351.3,
-      "share": 0.4614
-    },
-    {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 28258.3,
-      "share": 0.349
+      "tokensPerSecond": 38536.7,
+      "share": 0.369
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 37707.7,
+      "share": 0.3611
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 13938.1,
-      "share": 0.1722
+      "tokensPerSecond": 23627.6,
+      "share": 0.2262
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 1371.2,
-      "share": 0.0169
+      "tokensPerSecond": 4389.3,
+      "share": 0.042
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 41,
-      "share": 0.0005
+      "tokensPerSecond": 172.2,
+      "share": 0.0016
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 1.1,
+      "share": 0
     }
   ]
 }
