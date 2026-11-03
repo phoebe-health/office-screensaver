@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-03T18:03:38.196Z",
+  "updatedAt": "2026-11-03T18:18:27.688Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 100686715921,
-    "tokensToday": 1887865746,
-    "costTodayUsd": 2166.32
+    "tokensAllTime": 100807722273,
+    "tokensToday": 2008872098,
+    "costTodayUsd": 2295.1
   },
   "rate": {
-    "tokensPerSecond": 72025.7,
-    "usdPerSecond": 0.079233,
-    "inputTokensPerSecond": 71309.4,
-    "outputTokensPerSecond": 716.3
+    "tokensPerSecond": 134451.5,
+    "usdPerSecond": 0.143092,
+    "inputTokensPerSecond": 133563.1,
+    "outputTokensPerSecond": 888.5
   },
   "series": [
-    {
-      "time": 1793694064,
-      "value": 1845.1
-    },
     {
       "time": 1793694699,
       "value": 1152.1
@@ -172,44 +168,48 @@
     {
       "time": 1793729018,
       "value": 72025.7
+    },
+    {
+      "time": 1793729907,
+      "value": 134451.5
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 39185,
-      "share": 0.544
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 16514.9,
-      "share": 0.2293
+      "tokensPerSecond": 72983.2,
+      "share": 0.5428
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 54348.8,
+      "share": 0.4042
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 14550.2,
-      "share": 0.202
+      "tokensPerSecond": 5694.1,
+      "share": 0.0424
     },
     {
       "model": "claude-sonnet-4-6",
       "label": "Memory · Claude Sonnet 4.6",
-      "tokensPerSecond": 1169.2,
-      "share": 0.0162
+      "tokensPerSecond": 1421.1,
+      "share": 0.0106
     },
     {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 486.5,
-      "share": 0.0068
+      "tokensPerSecond": 3.3,
+      "share": 0
     },
     {
-      "model": "claude-sonnet-5",
+      "model": "claude-haiku-4-5-20251001",
       "label": "Other models",
-      "tokensPerSecond": 120,
-      "share": 0.0017
+      "tokensPerSecond": 1,
+      "share": 0
     }
   ]
 }
