@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-04T02:03:32.340Z",
+  "updatedAt": "2026-11-04T02:20:04.235Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 102091118459,
-    "tokensToday": 240036165,
-    "costTodayUsd": 255.25
+    "tokensAllTime": 102101319998,
+    "tokensToday": 250237704,
+    "costTodayUsd": 266.22
   },
   "rate": {
-    "tokensPerSecond": 8885,
-    "usdPerSecond": 0.01026,
-    "inputTokensPerSecond": 8541.2,
-    "outputTokensPerSecond": 343.8
+    "tokensPerSecond": 11335,
+    "usdPerSecond": 0.012191,
+    "inputTokensPerSecond": 11121,
+    "outputTokensPerSecond": 214
   },
   "series": [
-    {
-      "time": 1793720799,
-      "value": 60926.4
-    },
     {
       "time": 1793721771,
       "value": 63375.5
@@ -172,32 +168,48 @@
     {
       "time": 1793757812,
       "value": 8885
+    },
+    {
+      "time": 1793758804,
+      "value": 11335
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 4589.2,
-      "share": 0.5165
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 3398.2,
-      "share": 0.3825
+      "tokensPerSecond": 9476.8,
+      "share": 0.8361
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 957.9,
+      "share": 0.0845
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 848.2,
-      "share": 0.0955
+      "tokensPerSecond": 455.7,
+      "share": 0.0402
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 49.3,
-      "share": 0.0056
+      "tokensPerSecond": 440.3,
+      "share": 0.0388
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 3,
+      "share": 0.0003
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "label": "Other models",
+      "tokensPerSecond": 1.4,
+      "share": 0.0001
     }
   ]
 }
