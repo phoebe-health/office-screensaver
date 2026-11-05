@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-05T23:31:33.558Z",
+  "updatedAt": "2026-11-05T23:46:27.243Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 107556448890,
-    "tokensToday": 2875135180,
-    "costTodayUsd": 3013.13
+    "tokensAllTime": 107583674639,
+    "tokensToday": 2902360929,
+    "costTodayUsd": 3041.99
   },
   "rate": {
-    "tokensPerSecond": 19824.5,
-    "usdPerSecond": 0.020495,
-    "inputTokensPerSecond": 19656.9,
-    "outputTokensPerSecond": 167.7
+    "tokensPerSecond": 30250.8,
+    "usdPerSecond": 0.032064,
+    "inputTokensPerSecond": 29797.4,
+    "outputTokensPerSecond": 453.4
   },
   "series": [
-    {
-      "time": 1793885515,
-      "value": 47522.6
-    },
     {
       "time": 1793886391,
       "value": 27341
@@ -172,32 +168,48 @@
     {
       "time": 1793921493,
       "value": 19824.5
+    },
+    {
+      "time": 1793922387,
+      "value": 30250.8
     }
   ],
   "byModel": [
     {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 9895.4,
-      "share": 0.4991
-    },
-    {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 9687.2,
-      "share": 0.4886
+      "tokensPerSecond": 18391.6,
+      "share": 0.608
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 10390.8,
+      "share": 0.3435
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 194.6,
-      "share": 0.0098
+      "tokensPerSecond": 1183.5,
+      "share": 0.0391
     },
     {
-      "model": "claude-sonnet-5",
+      "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 47.4,
-      "share": 0.0024
+      "tokensPerSecond": 283.6,
+      "share": 0.0094
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 0.8,
+      "share": 0
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "label": "Other models",
+      "tokensPerSecond": 0.5,
+      "share": 0
     }
   ]
 }
