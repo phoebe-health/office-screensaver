@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-07T03:03:17.652Z",
+  "updatedAt": "2026-11-07T03:16:53.946Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 174560443583,
-    "tokensToday": 5897615771,
-    "costTodayUsd": 6102.14
+    "tokensAllTime": 175093916582,
+    "tokensToday": 6431088770,
+    "costTodayUsd": 6643.22
   },
   "rate": {
-    "tokensPerSecond": 396595.1,
-    "usdPerSecond": 0.402811,
-    "inputTokensPerSecond": 395041.2,
-    "outputTokensPerSecond": 1554
+    "tokensPerSecond": 592747.8,
+    "usdPerSecond": 0.601195,
+    "inputTokensPerSecond": 590635.9,
+    "outputTokensPerSecond": 2111.9
   },
   "series": [
-    {
-      "time": 1793984579,
-      "value": 1795624.2
-    },
     {
       "time": 1793985392,
       "value": 2437898.4
@@ -172,38 +168,42 @@
     {
       "time": 1794020597,
       "value": 396595.1
+    },
+    {
+      "time": 1794021413,
+      "value": 592747.8
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 358385.9,
-      "share": 0.9037
+      "tokensPerSecond": 560530.1,
+      "share": 0.9456
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 27258.7,
-      "share": 0.0687
+      "tokensPerSecond": 16924.8,
+      "share": 0.0286
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 7615.3,
-      "share": 0.0192
-    },
-    {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 2481.4,
-      "share": 0.0063
+      "tokensPerSecond": 6489.9,
+      "share": 0.0109
     },
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 853.9,
-      "share": 0.0022
+      "tokensPerSecond": 4767.4,
+      "share": 0.008
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 4035.6,
+      "share": 0.0068
     }
   ]
 }
