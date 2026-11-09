@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-09T10:31:39.637Z",
+  "updatedAt": "2026-11-09T10:46:34.651Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 253356309463,
-    "tokensToday": 5978503220,
-    "costTodayUsd": 6247.57
+    "tokensAllTime": 253375450008,
+    "tokensToday": 5997643765,
+    "costTodayUsd": 6267.11
   },
   "rate": {
-    "tokensPerSecond": 12508.7,
-    "usdPerSecond": 0.012846,
-    "inputTokensPerSecond": 12424.4,
-    "outputTokensPerSecond": 84.2
+    "tokensPerSecond": 21267.3,
+    "usdPerSecond": 0.021713,
+    "inputTokensPerSecond": 21155.7,
+    "outputTokensPerSecond": 111.5
   },
   "series": [
-    {
-      "time": 1794184778,
-      "value": 247449.4
-    },
     {
       "time": 1794185588,
       "value": 231654.1
@@ -172,38 +168,42 @@
     {
       "time": 1794220299,
       "value": 12508.7
+    },
+    {
+      "time": 1794221194,
+      "value": 21267.3
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 10487.3,
-      "share": 0.8384
-    },
-    {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 858.8,
-      "share": 0.0687
-    },
-    {
-      "model": "gpt-5.6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 513.3,
-      "share": 0.041
-    },
-    {
-      "model": "gpt-6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 451,
-      "share": 0.0361
+      "tokensPerSecond": 17584.9,
+      "share": 0.8269
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 198.2,
-      "share": 0.0158
+      "tokensPerSecond": 2028.2,
+      "share": 0.0954
+    },
+    {
+      "model": "gpt-6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 1241.7,
+      "share": 0.0584
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "label": "Other models",
+      "tokensPerSecond": 302.2,
+      "share": 0.0142
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 110.3,
+      "share": 0.0052
     }
   ]
 }
