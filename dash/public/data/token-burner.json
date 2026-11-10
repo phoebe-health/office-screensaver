@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-10T18:03:20.947Z",
+  "updatedAt": "2026-11-10T18:18:08.027Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 365789893626,
-    "tokensToday": 46784783565,
-    "costTodayUsd": 47861.47
+    "tokensAllTime": 367828539795,
+    "tokensToday": 48823429734,
+    "costTodayUsd": 49939.47
   },
   "rate": {
-    "tokensPerSecond": 2038880.9,
-    "usdPerSecond": 2.075775,
-    "inputTokensPerSecond": 2029657.3,
-    "outputTokensPerSecond": 9223.6
+    "tokensPerSecond": 2265162.4,
+    "usdPerSecond": 2.308891,
+    "inputTokensPerSecond": 2254798.2,
+    "outputTokensPerSecond": 10364.2
   },
   "series": [
-    {
-      "time": 1794298872,
-      "value": 156102.2
-    },
     {
       "time": 1794299503,
       "value": 110429.6
@@ -172,55 +168,71 @@
     {
       "time": 1794333800,
       "value": 2038880.9
+    },
+    {
+      "time": 1794334688,
+      "value": 2265162.4
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 1911914.8,
-      "share": 0.9377
+      "tokensPerSecond": 2099309.5,
+      "share": 0.9268
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 67722.9,
-      "share": 0.0332
+      "tokensPerSecond": 61065.6,
+      "share": 0.027
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 25538.2,
-      "share": 0.0125
+      "tokensPerSecond": 40861.6,
+      "share": 0.018
     },
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 17952.5,
-      "share": 0.0088
+      "tokensPerSecond": 36747.6,
+      "share": 0.0162
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 11601.2,
-      "share": 0.0057
+      "tokensPerSecond": 25684.2,
+      "share": 0.0113
     },
     {
-      "model": "gpt-5.6-terra",
+      "model": "claude-sonnet-4-6",
+      "label": "Memory · Claude Sonnet 4.6",
+      "tokensPerSecond": 1077.1,
+      "share": 0.0005
+    },
+    {
+      "model": "claude-haiku-5-5",
       "label": "Other models",
-      "tokensPerSecond": 4148.4,
-      "share": 0.002
+      "tokensPerSecond": 205.7,
+      "share": 0.0001
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 128,
+      "share": 0.0001
     },
     {
       "model": "claude-opus-4-8",
       "label": "Other models",
-      "tokensPerSecond": 2,
+      "tokensPerSecond": 82.2,
       "share": 0
     },
     {
       "model": "claude-haiku-4-5-20251001",
       "label": "Other models",
-      "tokensPerSecond": 0.9,
+      "tokensPerSecond": 1,
       "share": 0
     }
   ]
