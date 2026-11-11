@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-11T02:46:25.522Z",
+  "updatedAt": "2026-11-11T03:03:12.037Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 408931121166,
-    "tokensToday": 6047040080,
-    "costTodayUsd": 6158.26
+    "tokensAllTime": 409411372059,
+    "tokensToday": 6527290973,
+    "costTodayUsd": 6645.8
   },
   "rate": {
-    "tokensPerSecond": 272055.6,
-    "usdPerSecond": 0.276583,
-    "inputTokensPerSecond": 270923.8,
-    "outputTokensPerSecond": 1131.8
+    "tokensPerSecond": 533612.1,
+    "usdPerSecond": 0.541716,
+    "inputTokensPerSecond": 531586.2,
+    "outputTokensPerSecond": 2026
   },
   "series": [
-    {
-      "time": 1794329200,
-      "value": 1266375
-    },
     {
       "time": 1794330157,
       "value": 2921597
@@ -172,50 +168,42 @@
     {
       "time": 1794365185,
       "value": 272055.6
+    },
+    {
+      "time": 1794366192,
+      "value": 533612.1
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 233156.5,
-      "share": 0.857
+      "tokensPerSecond": 487640,
+      "share": 0.9138
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 27020.5,
-      "share": 0.0993
+      "tokensPerSecond": 42115.1,
+      "share": 0.0789
     },
     {
       "model": "gpt-5.6-luna",
       "label": "Other models",
-      "tokensPerSecond": 6994.6,
-      "share": 0.0257
+      "tokensPerSecond": 1575.4,
+      "share": 0.003
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 3922.4,
-      "share": 0.0144
+      "tokensPerSecond": 1412.3,
+      "share": 0.0026
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 922.6,
-      "share": 0.0034
-    },
-    {
-      "model": "claude-sonnet-5",
-      "label": "Other models",
-      "tokensPerSecond": 38.4,
-      "share": 0.0001
-    },
-    {
-      "model": "claude-haiku-4-5-20251001",
-      "label": "Other models",
-      "tokensPerSecond": 0.5,
-      "share": 0
+      "tokensPerSecond": 869.2,
+      "share": 0.0016
     }
   ]
 }
