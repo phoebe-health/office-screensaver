@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-16T23:31:38.268Z",
+  "updatedAt": "2026-11-16T23:46:29.564Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 864670788969,
-    "tokensToday": 91266848411,
-    "costTodayUsd": 92914.19
+    "tokensAllTime": 865148124440,
+    "tokensToday": 91744183882,
+    "costTodayUsd": 93400.86
   },
   "rate": {
-    "tokensPerSecond": 1170205.3,
-    "usdPerSecond": 1.187965,
-    "inputTokensPerSecond": 1165765.4,
-    "outputTokensPerSecond": 4439.9
+    "tokensPerSecond": 530372.7,
+    "usdPerSecond": 0.540742,
+    "inputTokensPerSecond": 527780.5,
+    "outputTokensPerSecond": 2592.2
   },
   "series": [
-    {
-      "time": 1794835796,
-      "value": 1119180.8
-    },
     {
       "time": 1794837185,
       "value": 1153750.2
@@ -172,37 +168,47 @@
     {
       "time": 1794871898,
       "value": 1170205.3
+    },
+    {
+      "time": 1794872789,
+      "value": 530372.7
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 1109510.3,
-      "share": 0.9481
+      "tokensPerSecond": 478491.6,
+      "share": 0.9022
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 48888,
-      "share": 0.0418
+      "tokensPerSecond": 37832.1,
+      "share": 0.0713
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 7513.5,
-      "share": 0.0064
+      "tokensPerSecond": 7986.6,
+      "share": 0.0151
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 4201.5,
-      "share": 0.0036
+      "tokensPerSecond": 5584.6,
+      "share": 0.0105
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 441.7,
+      "share": 0.0008
     },
     {
       "model": "claude-sonnet-5",
       "label": "Other models",
-      "tokensPerSecond": 91.9,
+      "tokensPerSecond": 36.1,
       "share": 0.0001
     }
   ]
