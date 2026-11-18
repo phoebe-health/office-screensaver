@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-18T02:21:40.599Z",
+  "updatedAt": "2026-11-18T02:31:29.295Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 979599520758,
-    "tokensToday": 8121630881,
-    "costTodayUsd": 8254.49
+    "tokensAllTime": 980141781467,
+    "tokensToday": 8663891590,
+    "costTodayUsd": 8805.92
   },
   "rate": {
-    "tokensPerSecond": 1056295.8,
-    "usdPerSecond": 1.072103,
-    "inputTokensPerSecond": 1052343.9,
-    "outputTokensPerSecond": 3951.9
+    "tokensPerSecond": 602511.9,
+    "usdPerSecond": 0.612705,
+    "inputTokensPerSecond": 600068.1,
+    "outputTokensPerSecond": 2443.8
   },
   "series": [
-    {
-      "time": 1794932343,
-      "value": 3157389.8
-    },
     {
       "time": 1794933096,
       "value": 2526489.6
@@ -172,32 +168,48 @@
     {
       "time": 1794968500,
       "value": 1056295.8
+    },
+    {
+      "time": 1794969089,
+      "value": 602511.9
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 1015441.4,
-      "share": 0.9613
+      "tokensPerSecond": 564995,
+      "share": 0.9377
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 34209.9,
-      "share": 0.0324
-    },
-    {
-      "model": "gemini-3.8-live",
-      "label": "Other models",
-      "tokensPerSecond": 5645.4,
-      "share": 0.0053
+      "tokensPerSecond": 29116.1,
+      "share": 0.0483
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 999.1,
-      "share": 0.0009
+      "tokensPerSecond": 5644.1,
+      "share": 0.0094
+    },
+    {
+      "model": "gemini-3.8-live",
+      "label": "Other models",
+      "tokensPerSecond": 1939.3,
+      "share": 0.0032
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 631.1,
+      "share": 0.001
+    },
+    {
+      "model": "claude-sonnet-4-6",
+      "label": "Memory · Claude Sonnet 4.6",
+      "tokensPerSecond": 186.3,
+      "share": 0.0003
     }
   ]
 }
