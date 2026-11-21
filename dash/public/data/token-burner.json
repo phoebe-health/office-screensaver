@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-21T04:31:53.415Z",
+  "updatedAt": "2026-11-21T04:46:34.222Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1401711175937,
-    "tokensToday": 16748733557,
-    "costTodayUsd": 16989.17
+    "tokensAllTime": 1401881354872,
+    "tokensToday": 16918912492,
+    "costTodayUsd": 17162.67
   },
   "rate": {
-    "tokensPerSecond": 422682.5,
-    "usdPerSecond": 0.427176,
-    "inputTokensPerSecond": 421559,
-    "outputTokensPerSecond": 1123.5
+    "tokensPerSecond": 189087.7,
+    "usdPerSecond": 0.192782,
+    "inputTokensPerSecond": 188164.2,
+    "outputTokensPerSecond": 923.5
   },
   "series": [
-    {
-      "time": 1795199528,
-      "value": 2413119.5
-    },
     {
       "time": 1795200373,
       "value": 1809515.3
@@ -172,38 +168,42 @@
     {
       "time": 1795235513,
       "value": 422682.5
+    },
+    {
+      "time": 1795236394,
+      "value": 189087.7
     }
   ],
   "byModel": [
     {
-      "model": "gpt-5.6-terra",
-      "label": "Other models",
-      "tokensPerSecond": 288304.7,
-      "share": 0.6821
-    },
-    {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 82149.2,
-      "share": 0.1944
+      "tokensPerSecond": 79888.9,
+      "share": 0.4225
     },
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 51274.9,
-      "share": 0.1213
+      "tokensPerSecond": 65725.6,
+      "share": 0.3476
     },
     {
-      "model": "gemini-3.8-live",
+      "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 478.1,
-      "share": 0.0011
+      "tokensPerSecond": 40886.5,
+      "share": 0.2162
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 475.6,
-      "share": 0.0011
+      "tokensPerSecond": 2491.4,
+      "share": 0.0132
+    },
+    {
+      "model": "gemini-3.8-live",
+      "label": "Other models",
+      "tokensPerSecond": 95.3,
+      "share": 0.0005
     }
   ]
 }
