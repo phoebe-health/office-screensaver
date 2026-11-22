@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-22T04:31:35.555Z",
+  "updatedAt": "2026-11-22T04:46:36.850Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1470673948814,
-    "tokensToday": 12075419698,
-    "costTodayUsd": 12249.75
+    "tokensAllTime": 1470931035870,
+    "tokensToday": 12332506754,
+    "costTodayUsd": 12511.8
   },
   "rate": {
-    "tokensPerSecond": 254173.7,
-    "usdPerSecond": 0.257814,
-    "inputTokensPerSecond": 253263.6,
-    "outputTokensPerSecond": 910.1
+    "tokensPerSecond": 285652.3,
+    "usdPerSecond": 0.291171,
+    "inputTokensPerSecond": 284272.7,
+    "outputTokensPerSecond": 1379.6
   },
   "series": [
-    {
-      "time": 1795285915,
-      "value": 1446632.9
-    },
     {
       "time": 1795286797,
       "value": 1084089.9
@@ -172,38 +168,48 @@
     {
       "time": 1795321895,
       "value": 254173.7
+    },
+    {
+      "time": 1795322796,
+      "value": 285652.3
     }
   ],
   "byModel": [
     {
       "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 135250,
-      "share": 0.5321
+      "tokensPerSecond": 148175.6,
+      "share": 0.5187
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 73049.2,
-      "share": 0.2874
+      "tokensPerSecond": 83710.2,
+      "share": 0.293
     },
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 44006.6,
-      "share": 0.1731
+      "tokensPerSecond": 46987,
+      "share": 0.1645
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 1654.4,
-      "share": 0.0065
+      "tokensPerSecond": 6505.2,
+      "share": 0.0228
+    },
+    {
+      "model": "claude-opus-4-8",
+      "label": "Other models",
+      "tokensPerSecond": 222.6,
+      "share": 0.0008
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 213.5,
-      "share": 0.0008
+      "tokensPerSecond": 51.8,
+      "share": 0.0002
     }
   ]
 }
