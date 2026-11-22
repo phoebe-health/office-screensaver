@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-22T04:03:21.255Z",
+  "updatedAt": "2026-11-22T04:18:54.773Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1470060915872,
-    "tokensToday": 11462386756,
-    "costTodayUsd": 11627.44
+    "tokensAllTime": 1470445192519,
+    "tokensToday": 11846663403,
+    "costTodayUsd": 12017.72
   },
   "rate": {
-    "tokensPerSecond": 211427.9,
-    "usdPerSecond": 0.215888,
-    "inputTokensPerSecond": 210312.9,
-    "outputTokensPerSecond": 1115
+    "tokensPerSecond": 426974.1,
+    "usdPerSecond": 0.433645,
+    "inputTokensPerSecond": 425306.2,
+    "outputTokensPerSecond": 1667.8
   },
   "series": [
-    {
-      "time": 1795284183,
-      "value": 1415027.4
-    },
     {
       "time": 1795285050,
       "value": 1771867.9
@@ -172,38 +168,42 @@
     {
       "time": 1795320201,
       "value": 211427.9
+    },
+    {
+      "time": 1795321134,
+      "value": 426974.1
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 78369.8,
-      "share": 0.3707
-    },
-    {
-      "model": "gpt-6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 71489.4,
-      "share": 0.3381
+      "tokensPerSecond": 271034.1,
+      "share": 0.6348
     },
     {
       "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 60380.4,
-      "share": 0.2856
+      "tokensPerSecond": 86813.8,
+      "share": 0.2033
     },
     {
-      "model": "claude-opus-5-5",
+      "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 1047.8,
-      "share": 0.005
+      "tokensPerSecond": 67817.2,
+      "share": 0.1588
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 140.5,
-      "share": 0.0007
+      "tokensPerSecond": 697.6,
+      "share": 0.0016
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 611.4,
+      "share": 0.0014
     }
   ]
 }
