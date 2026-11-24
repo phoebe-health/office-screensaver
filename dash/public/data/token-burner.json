@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-24T00:07:15.579Z",
+  "updatedAt": "2026-11-24T00:34:29.046Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1679372612212,
-    "tokensToday": 1766688627,
-    "costTodayUsd": 1792.92
+    "tokensAllTime": 1680279268936,
+    "tokensToday": 2673345351,
+    "costTodayUsd": 2712.1
   },
   "rate": {
-    "tokensPerSecond": 1962987.4,
-    "usdPerSecond": 1.99213,
-    "inputTokensPerSecond": 1955701.7,
-    "outputTokensPerSecond": 7285.7
+    "tokensPerSecond": 1007396.4,
+    "usdPerSecond": 1.021315,
+    "inputTokensPerSecond": 1003916.7,
+    "outputTokensPerSecond": 3479.7
   },
   "series": [
-    {
-      "time": 1795443557,
-      "value": 4150566.1
-    },
     {
       "time": 1795444291,
       "value": 2092444.5
@@ -172,38 +168,48 @@
     {
       "time": 1795478835,
       "value": 1962987.4
+    },
+    {
+      "time": 1795480469,
+      "value": 1007396.4
     }
   ],
   "byModel": [
     {
-      "model": "gpt-6.1-terra",
-      "label": "Other models",
-      "tokensPerSecond": 1306192.6,
-      "share": 0.6654
-    },
-    {
       "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 572244.7,
-      "share": 0.2915
+      "tokensPerSecond": 509120.6,
+      "share": 0.5054
+    },
+    {
+      "model": "gpt-6.1-terra",
+      "label": "Other models",
+      "tokensPerSecond": 429562.1,
+      "share": 0.4264
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 75614,
-      "share": 0.0385
+      "tokensPerSecond": 58044.3,
+      "share": 0.0576
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 7348.4,
-      "share": 0.0037
+      "tokensPerSecond": 5739.4,
+      "share": 0.0057
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 1587.6,
-      "share": 0.0008
+      "tokensPerSecond": 4840.1,
+      "share": 0.0048
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 90,
+      "share": 0.0001
     }
   ]
 }
