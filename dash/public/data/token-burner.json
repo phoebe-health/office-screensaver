@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-25T00:54:29.890Z",
+  "updatedAt": "2026-11-25T01:03:18.187Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1828600219497,
-    "tokensToday": 3939903976,
-    "costTodayUsd": 3989.02
+    "tokensAllTime": 1830997249751,
+    "tokensToday": 6336934230,
+    "costTodayUsd": 6409.78
   },
   "rate": {
-    "tokensPerSecond": 1430482.5,
-    "usdPerSecond": 1.445486,
-    "inputTokensPerSecond": 1426731.6,
-    "outputTokensPerSecond": 3750.9
+    "tokensPerSecond": 2663366.9,
+    "usdPerSecond": 2.689734,
+    "inputTokensPerSecond": 2656775.1,
+    "outputTokensPerSecond": 6591.9
   },
   "series": [
-    {
-      "time": 1795531596,
-      "value": 1830777.2
-    },
     {
       "time": 1795532590,
       "value": 5620557.9
@@ -172,38 +168,48 @@
     {
       "time": 1795568069,
       "value": 1430482.5
+    },
+    {
+      "time": 1795568598,
+      "value": 2663366.9
     }
   ],
   "byModel": [
     {
       "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 854429.2,
-      "share": 0.5973
+      "tokensPerSecond": 1583681.3,
+      "share": 0.5946
     },
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 467248.6,
-      "share": 0.3266
+      "tokensPerSecond": 999118.3,
+      "share": 0.3751
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 102176.5,
-      "share": 0.0714
+      "tokensPerSecond": 68483.7,
+      "share": 0.0257
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 4529.9,
-      "share": 0.0032
+      "tokensPerSecond": 6238.2,
+      "share": 0.0023
     },
     {
       "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 2098.3,
-      "share": 0.0015
+      "tokensPerSecond": 5801,
+      "share": 0.0022
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 44.5,
+      "share": 0
     }
   ]
 }
