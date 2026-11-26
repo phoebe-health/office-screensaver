@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-26T12:03:53.571Z",
+  "updatedAt": "2026-11-26T12:23:27.149Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1964792431756,
-    "tokensToday": 16691380150,
-    "costTodayUsd": 16967.05
+    "tokensAllTime": 1965064258340,
+    "tokensToday": 16963206734,
+    "costTodayUsd": 17243.54
   },
   "rate": {
-    "tokensPerSecond": 141263.7,
-    "usdPerSecond": 0.144973,
-    "inputTokensPerSecond": 140336.4,
-    "outputTokensPerSecond": 927.4
+    "tokensPerSecond": 302029.5,
+    "usdPerSecond": 0.307213,
+    "inputTokensPerSecond": 300733.7,
+    "outputTokensPerSecond": 1295.8
   },
   "series": [
-    {
-      "time": 1795659700,
-      "value": 806673.6
-    },
     {
       "time": 1795660356,
       "value": 628952.3
@@ -172,38 +168,42 @@
     {
       "time": 1795694633,
       "value": 141263.7
+    },
+    {
+      "time": 1795695807,
+      "value": 302029.5
     }
   ],
   "byModel": [
     {
-      "model": "gpt-6-luna",
-      "label": "Other models",
-      "tokensPerSecond": 53497.8,
-      "share": 0.3787
-    },
-    {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 45832.3,
-      "share": 0.3244
+      "tokensPerSecond": 140098.5,
+      "share": 0.4639
     },
     {
       "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 37706,
-      "share": 0.2669
+      "tokensPerSecond": 112252.8,
+      "share": 0.3717
     },
     {
-      "model": "claude-opus-5-5",
+      "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 2373,
-      "share": 0.0168
+      "tokensPerSecond": 45818.5,
+      "share": 0.1517
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 1854.6,
-      "share": 0.0131
+      "tokensPerSecond": 2849.3,
+      "share": 0.0094
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 1010.5,
+      "share": 0.0033
     }
   ]
 }
