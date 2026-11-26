@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-26T10:03:09.514Z",
+  "updatedAt": "2026-11-26T10:17:42.219Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 1963473278382,
-    "tokensToday": 15372226776,
-    "costTodayUsd": 15624.6
+    "tokensAllTime": 1963570792421,
+    "tokensToday": 15469740815,
+    "costTodayUsd": 15724.36
   },
   "rate": {
-    "tokensPerSecond": 106756.1,
-    "usdPerSecond": 0.109167,
-    "inputTokensPerSecond": 106153.3,
-    "outputTokensPerSecond": 602.8
+    "tokensPerSecond": 108348.9,
+    "usdPerSecond": 0.110844,
+    "inputTokensPerSecond": 107725.1,
+    "outputTokensPerSecond": 623.8
   },
   "series": [
-    {
-      "time": 1795651649,
-      "value": 1405698.7
-    },
     {
       "time": 1795653401,
       "value": 785191.4
@@ -172,32 +168,48 @@
     {
       "time": 1795687389,
       "value": 106756.1
+    },
+    {
+      "time": 1795688262,
+      "value": 108348.9
     }
   ],
   "byModel": [
     {
-      "model": "gpt-5.6-terra",
-      "label": "Other models",
-      "tokensPerSecond": 60511.1,
-      "share": 0.5668
-    },
-    {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 42679.9,
-      "share": 0.3998
+      "tokensPerSecond": 54165.2,
+      "share": 0.4999
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "label": "Other models",
+      "tokensPerSecond": 49791,
+      "share": 0.4595
     },
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 3404.2,
-      "share": 0.0319
+      "tokensPerSecond": 3734.5,
+      "share": 0.0345
+    },
+    {
+      "model": "claude-opus-5-5",
+      "label": "Other models",
+      "tokensPerSecond": 578.7,
+      "share": 0.0053
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 161,
-      "share": 0.0015
+      "tokensPerSecond": 42.9,
+      "share": 0.0004
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 36.5,
+      "share": 0.0003
     }
   ]
 }
