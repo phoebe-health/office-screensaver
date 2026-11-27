@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-27T07:31:43.816Z",
+  "updatedAt": "2026-11-27T07:46:38.605Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 2047163763745,
-    "tokensToday": 13798100826,
-    "costTodayUsd": 14022.72
+    "tokensAllTime": 2047386980617,
+    "tokensToday": 14021317698,
+    "costTodayUsd": 14249.16
   },
   "rate": {
-    "tokensPerSecond": 129243.8,
-    "usdPerSecond": 0.132214,
-    "inputTokensPerSecond": 128501.3,
-    "outputTokensPerSecond": 742.5
+    "tokensPerSecond": 248018.7,
+    "usdPerSecond": 0.251599,
+    "inputTokensPerSecond": 247123.6,
+    "outputTokensPerSecond": 895.2
   },
   "series": [
-    {
-      "time": 1795728686,
-      "value": 959258.3
-    },
     {
       "time": 1795729579,
       "value": 670137.9
@@ -172,44 +168,42 @@
     {
       "time": 1795764703,
       "value": 129243.8
+    },
+    {
+      "time": 1795765598,
+      "value": 248018.7
     }
   ],
   "byModel": [
     {
-      "model": "gpt-6-luna",
+      "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 51469.6,
-      "share": 0.3982
+      "tokensPerSecond": 143155.5,
+      "share": 0.5772
     },
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 40777.4,
-      "share": 0.3155
+      "tokensPerSecond": 59325.8,
+      "share": 0.2392
     },
     {
-      "model": "gpt-5.6-terra",
+      "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 36195.2,
-      "share": 0.2801
-    },
-    {
-      "model": "claude-opus-5-5",
-      "label": "Other models",
-      "tokensPerSecond": 639.3,
-      "share": 0.0049
+      "tokensPerSecond": 44464.6,
+      "share": 0.1793
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 127,
-      "share": 0.001
+      "tokensPerSecond": 634,
+      "share": 0.0026
     },
     {
-      "model": "claude-sonnet-5",
+      "model": "claude-opus-5-5",
       "label": "Other models",
-      "tokensPerSecond": 35.3,
-      "share": 0.0003
+      "tokensPerSecond": 438.8,
+      "share": 0.0018
     }
   ]
 }
