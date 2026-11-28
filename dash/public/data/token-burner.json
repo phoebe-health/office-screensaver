@@ -1,22 +1,18 @@
 {
-  "updatedAt": "2026-11-28T03:31:08.495Z",
+  "updatedAt": "2026-11-28T03:46:26.584Z",
   "windowSeconds": 900,
   "totals": {
-    "tokensAllTime": 2163168977064,
-    "tokensToday": 10824989249,
-    "costTodayUsd": 10998.57
+    "tokensAllTime": 2163425336009,
+    "tokensToday": 11081348194,
+    "costTodayUsd": 11259.43
   },
   "rate": {
-    "tokensPerSecond": 389767.8,
-    "usdPerSecond": 0.396243,
-    "inputTokensPerSecond": 388149,
-    "outputTokensPerSecond": 1618.8
+    "tokensPerSecond": 284843.3,
+    "usdPerSecond": 0.289844,
+    "inputTokensPerSecond": 283593.1,
+    "outputTokensPerSecond": 1250.2
   },
   "series": [
-    {
-      "time": 1795800694,
-      "value": 2307630.2
-    },
     {
       "time": 1795801586,
       "value": 2184805.9
@@ -172,38 +168,42 @@
     {
       "time": 1795836668,
       "value": 389767.8
+    },
+    {
+      "time": 1795837586,
+      "value": 284843.3
     }
   ],
   "byModel": [
     {
       "model": "gpt-6.1-terra",
       "label": "Other models",
-      "tokensPerSecond": 220117.9,
-      "share": 0.5647
-    },
-    {
-      "model": "gpt-5.6-terra",
-      "label": "Other models",
-      "tokensPerSecond": 121990.3,
-      "share": 0.313
+      "tokensPerSecond": 194788.3,
+      "share": 0.6838
     },
     {
       "model": "gpt-6-luna",
       "label": "Other models",
-      "tokensPerSecond": 45982.1,
-      "share": 0.118
+      "tokensPerSecond": 48746.4,
+      "share": 0.1711
     },
     {
-      "model": "claude-opus-5-5",
+      "model": "gpt-5.6-terra",
       "label": "Other models",
-      "tokensPerSecond": 1346.5,
-      "share": 0.0035
+      "tokensPerSecond": 40750,
+      "share": 0.1431
     },
     {
       "model": "gemini-3.8-live",
       "label": "Other models",
-      "tokensPerSecond": 330.9,
-      "share": 0.0008
+      "tokensPerSecond": 513.6,
+      "share": 0.0018
+    },
+    {
+      "model": "claude-sonnet-5",
+      "label": "Other models",
+      "tokensPerSecond": 44.9,
+      "share": 0.0002
     }
   ]
 }
